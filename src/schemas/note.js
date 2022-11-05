@@ -1,10 +1,7 @@
-import { MdNote } from "react-icons/md";
-
 export default {
   name: "note",
   title: "Notes",
   type: "document",
-  icon: MdNote,
   fields: [
     {
       name: "title",
@@ -12,29 +9,57 @@ export default {
       type: "string",
     },
     {
-      name: "domain",
+      name: "content",
+      title: "Content",
+      type: "text",
+    },
+    {
+      name: "image",
+      title: "Image",
+      type: "image",
+      description: "optional",
+    },
+    {
+      name: "publishedOn",
       title: "Domain",
-      type: "string",
+      type: "reference",
+      to: [{ type: "domain" }],
     },
     {
       name: "preset",
       title: "Preset",
       type: "string",
+      initialValue: "default",
+      options: {
+        list: [
+          {title: "Default", value:"default"},
+          {title: "Unstyled", value:"unstyled"}
+        ]
+      }
     },
     {
       name: "status",
       title: "Status",
       type: "string",
+      initialValue: "draft",
+      options: {
+        list: [
+          { title: "Published", value: "published" },
+          { title: "Draft", value: "draft" },
+          { title: "Archived", value: "archived" },
+        ],
+      },
     },
     {
       name: "dateFrom",
-      title: "Date from",
-      type: "string",
+      title: "Active from",
+      type: "date",
+      description: "Leave empty to always display"
     },
     {
       name: "dateTo",
-      title: "Date to",
-      type: "string",
+      title: "Active till",
+      type: "date",
     },
     {
       name: "belongsTo",
