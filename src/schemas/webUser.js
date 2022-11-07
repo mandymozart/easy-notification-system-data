@@ -12,11 +12,6 @@ export default {
       name: "fullName",
       title: "Full Name",
       type: "string",
-    },
-    {
-      name: "domain",
-      title: "Domain",
-      type: "string",
-    },
+    }
   ],
 };

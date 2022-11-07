@@ -14,16 +14,17 @@ export default {
       type: "text",
     },
     {
+      name: "domain",
+      title: "Domain",
+      type: "string",
+      description:
+        "Simple domain reference. Currently only demo and one client is available. Extend here in the future",
+    },
+    {
       name: "image",
       title: "Image",
       type: "image",
       description: "optional",
-    },
-    {
-      name: "publishedOn",
-      title: "Domain",
-      type: "reference",
-      to: [{ type: "domain" }],
     },
     {
       name: "preset",
@@ -32,10 +33,10 @@ export default {
       initialValue: "default",
       options: {
         list: [
-          {title: "Default", value:"default"},
-          {title: "Unstyled", value:"unstyled"}
-        ]
-      }
+          { title: "Default", value: "default" },
+          { title: "Unstyled", value: "unstyled" },
+        ],
+      },
     },
     {
       name: "status",
@@ -54,7 +55,7 @@ export default {
       name: "dateFrom",
       title: "Active from",
       type: "date",
-      description: "Leave empty to always display"
+      description: "Leave empty to always display",
     },
     {
       name: "dateTo",
@@ -71,7 +72,7 @@ export default {
   preview: {
     select: {
       title: "title",
-      subtitle: "belongsTo.email",
+      subtitle: "domain",
     },
   },
 };
